@@ -27,5 +27,6 @@ var addTwoNumbers = function(l1, l2) {
     for (var key in storage) {
         result += Math.pow(10, key)*(storage[key][0] + storage[key][1]);
     }
+    
     return result
 };
