@@ -18,10 +18,10 @@ var twoSum = function(nums, target) {
     for (var i = 0; i < nums.length; i ++) {
         var sumDiff = target - nums[i];
         if (!storage[nums[i]]) {
-            storage[nums[i]] = [sumDiff, i];
+            storage[nums[i]] = i;
         }
-        if (storage[sumDiff] && storage[sumDiff][0] === nums[i]) {
-            return [i, storage[sumDiff][1]];
+        if (storage.hasOwnProperty(sumDiff)) {
+            return [i, storage[sumDiff]];
         }
     }
 };
