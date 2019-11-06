@@ -12,6 +12,10 @@ Share
 Given an array A of strings made only from lowercase letters, return a list of all characters that show up in all strings within the list (including duplicates).  For example, if a character occurs 3 times in all strings but not 4 times, you need to include that character three times in the final answer.
 */
 
+/**
+ * @param {string[]} A
+ * @return {string[]}
+ */
 var commonChars = function(A) {
     var charCount = {};
     var result = [];
@@ -34,8 +38,9 @@ var commonChars = function(A) {
     }
     for (var j = 0; j < A.length; j ++) {
         for (var key in charCount) {
-            if (charCount[key] > countLetter(A[j], key)) {
-                charCount[key] = countLetter(A[j], key);
+            var count = countLetter(A[j], key)
+            if (charCount[key] > count) {
+                charCount[key] = count;
             }
         }
     }
@@ -44,7 +49,7 @@ var commonChars = function(A) {
             result.push(key);
         }
     }
-    return charCount;
+    return result;
 };
 
 var x = ["cool","lock","cook"];
