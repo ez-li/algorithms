@@ -23,5 +23,5 @@ var buildLand = function(array) {
 	while (array.reduce(function(a, b) { return a + b}, 0) !== 0) {
 		buildRow(array);
 	}
-	return output;
+	return output.join('\n');
 }
